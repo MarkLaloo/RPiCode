@@ -207,7 +207,7 @@ void hourInc(void){
 		if(value==24){
 			value=00;
 		}
-		wiringPiI2CWriteReg8(RTC,HOUR_REGISTER,value);
+		wiringPiI2CWriteReg8(RTC,HOUR_REGISTER,hexDecompensation(value));
 	}
 	lastInterruptTime = interruptTime;
 }
@@ -232,7 +232,7 @@ void minInc(void){
 			value=00;
 			hourInc();
 		}
-		wiringPiI2CWriteReg8(RTC,MIN_REGISTER,value);
+		wiringPiI2CWriteReg8(RTC,MIN_REGISTER,hexDecompensation(value));
 	}
 	lastInterruptTime = interruptTime;
 }
