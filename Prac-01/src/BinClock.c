@@ -25,6 +25,7 @@ int RTC; //Holds the RTC instance
 
 int HH,MM,SS;
 
+int value;
 
 // Clean up function to avoid damaging used pins
 void CleanUp(int sig){
